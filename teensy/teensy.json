@@ -1,0 +1,24 @@
+{
+    "fileName": "teensy.json",
+    "name": "Teensy",
+    "version": "2024.0.0",
+    "frcYear": "2024",
+    "uuid": "4838778a-3eb6-4bbf-a24f-acbd947da911",
+    "mavenUrls": [
+        "https://yapplejack.github.io/teensySwerve-lib/teensy/repos"
+    ],
+    "jsonUrl": "https://yapplejack.github.io/teensySwerve-lib/teensy/teensy.json",
+    "javaDependencies": [
+        {
+            "groupId": "teensylib",
+            "artifactId": "Teensy-java",
+            "version": "2024.0.0"
+        }
+    ],
+    "jniDependencies": [
+       
+    ],
+    "cppDependencies": [
+        
+    ]
+}
