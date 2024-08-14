@@ -66,6 +66,8 @@ jobs:
           distribution: 'temurin'
           java-version: 17
           architecture: ${{ matrix.architecture }}
+      - name: Install roboRio toolchain
+        run: ./gradlew installRoboRioToolchain
       - name: Build with Gradle
         run: ./gradlew build -Pbuildalldesktop
       - uses: actions/upload-artifact@v4
