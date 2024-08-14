@@ -112,3 +112,7 @@ jobs:
         with:
           name: Maven
           path: ~/releases
+  deploy:
+  - name: Build Jekyll for GitHub Pages
+    uses: actions/jekyll-build-pages@v1.0.13
+
