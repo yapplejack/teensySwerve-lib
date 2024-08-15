@@ -1,7 +1,7 @@
 {
     "fileName": "teensy.json",
     "name": "Teensy",
-    "version": "2024.0.0",
+    "version": "2024.0.1",
     "frcYear": "2024",
     "uuid": "4838778a-3eb6-4bbf-a24f-acbd947da911",
     "mavenUrls": [
@@ -12,7 +12,7 @@
         {
             "groupId": "teensylib",
             "artifactId": "Teensy-java",
-            "version": "2024.0.0"
+            "version": "2024.0.1"
         }
     ],
     "jniDependencies": [
