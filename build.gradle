@@ -10,11 +10,6 @@ plugins {
     id "com.diffplug.spotless" version "6.11.0"
 }
 
-ext {
-    includeWpiutil = true
-    pluginName = 'halsim_teensy'
-}
-
 ext.wpilibVersion = "2024.3.2" // and again here, thanks gradle....
 
 repositories {

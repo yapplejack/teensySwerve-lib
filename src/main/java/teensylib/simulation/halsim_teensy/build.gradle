@@ -1,0 +1,24 @@
+if (project.hasProperty('onlylinuxathena')) {
+    return;
+}
+
+description = "Teensy Extension"
+
+ext {
+    includeWpiutil = true
+    pluginName = 'halsim_teensy'
+}
+
+model {
+    binaries {
+        all {
+            if (it.targetPlatform.name == nativeUtils.wpi.platforms.roborio) {
+                it.buildable = false
+                return
+            }
+
+            lib project: ':wpinet', library: 'wpinet', linkage: 'shared'
+            lib project: ":simulation:halsim_ws_core", library: "halsim_ws_core", linkage: "static"
+        }
+    }
+}

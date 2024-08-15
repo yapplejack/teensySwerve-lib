@@ -4,3 +4,5 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
+
+include 'src:main:java:teensylib:simulation:halsim_teensy'

@@ -7,15 +7,15 @@
 
 #include <hal/Extensions.h>
 
-#include "HALSimXRPClient.h"
+#include "HALSimTeensyClient.h"
 
 #if defined(Win32) || defined(_WIN32)
 #pragma comment(lib, "Ws2_32.lib")
 #endif
 
-using namespace wpilibxrp;
+using namespace teensyswerve;
 
-static std::unique_ptr<HALSimXRPClient> gClient;
+static std::unique_ptr<HALSimTeensyClient> gClient;
 
 /*--------------------------------------------------------------------------
  ** Main Entry Point. Start up the listening threads
@@ -26,18 +26,18 @@ __declspec(dllexport)
 #endif
 
 int HALSIM_InitExtension(void) {
-	std::puts("HALSim XRP Extension Initializing");
+	std::puts("HALSim Teensy Extension Initializing");
 
 	HAL_OnShutdown(nullptr, [](void*) {
 		gClient.reset();
 	});
 
-	gClient = std::make_unique<HALSimXRPClient>();
+	gClient = std::make_unique<HALSimTeensyClient>();
 	if (!gClient->Initialize()) {
 		return -1;
 	}
 
-	std::puts("HALSim XRP Extension Initialized");
+	std::puts("HALSim Teensy Extension Initialized");
 	return 0;
 }
 

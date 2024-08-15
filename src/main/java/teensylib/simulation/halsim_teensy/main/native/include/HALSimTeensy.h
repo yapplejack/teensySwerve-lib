@@ -19,22 +19,22 @@
 #include <wpinet/uv/Timer.h>
 #include <wpinet/uv/Udp.h>
 
-#include "XRP.h"
+#include "Teensy.h"
 
 namespace teensyswerve {
 
 // This masquerades as a "WebSocket" so that we can reuse the
 // stuff in halsim_ws_core
-class HALSimXRP: public wpilibws::HALSimBaseWebSocketConnection,
-		public std::enable_shared_from_this<HALSimXRP> {
+class HALSimTeensy: public wpilibws::HALSimBaseWebSocketConnection,
+		public std::enable_shared_from_this<HALSimTeensy> {
 public:
 	using LoopFunc = std::function<void()>;
 	using UvExecFunc = wpi::uv::Async<LoopFunc>;
 
-	HALSimXRP(wpi::uv::Loop &loop, wpilibws::ProviderContainer &providers,
+	HALSimTeensy(wpi::uv::Loop &loop, wpilibws::ProviderContainer &providers,
 			wpilibws::HALSimWSProviderSimDevices &simDevicesProvider);
-	HALSimXRP(const HALSimXRP&) = delete;
-	HALSimXRP& operator=(const HALSimXRP&) = delete;
+	HALSimTeensy(const HALSimTeensy&) = delete;
+	HALSimTeensy& operator=(const HALSimTeensy&) = delete;
 
 	bool Initialize();
 	void Start();
@@ -58,7 +58,7 @@ public:
 	}
 
 private:
-	XRP m_xrp;
+	Teensy m_teensy;
 
 	wpi::uv::Loop &m_loop;
 	std::shared_ptr<wpi::uv::Udp> m_udp_client;
@@ -70,7 +70,7 @@ private:
 	std::string m_host;
 	int m_port;
 
-	void SendStateToXRP();
+	void SendStateToTeensy();
 	wpi::uv::SimpleBufferPool<4>& GetBufferPool();
 	std::mutex m_buffer_mutex;
 

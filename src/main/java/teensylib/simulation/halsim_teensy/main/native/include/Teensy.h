@@ -70,7 +70,7 @@ private:
 	std::map<uint8_t, uint8_t> m_encoder_channel_map;
 
 	uint16_t m_wpilib_bound_seq = 0;
-	uint16_t m_xrp_bound_seq = 0;
+	uint16_t m_teensy_bound_seq = 0;
 
 	bool m_robot_enabled = false;
 
